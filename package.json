@@ -5,7 +5,7 @@
   "main": "lib/module.js",
   "types": "lib/module.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "yarn jest"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "jest": "^24.0.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "yarn": "^1.13.0"
   },
   "peerDependencies": {
     "nuxt": "^2.0.0",
