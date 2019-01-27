@@ -1,6 +1,6 @@
 # nuxt-ua
 
-UserAgent detector using platform for Nuxt.
+UserAgent detector using [Platform.js](https://github.com/bestiejs/platform.js) for Nuxt.
 
 ## Install
 

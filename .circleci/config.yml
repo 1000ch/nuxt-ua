@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/repo
+
+    docker:
+      - image: node:10.15.0
+
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+
+workflows:
+  version: 2
+  per-commit:
+    jobs:
+      - test
