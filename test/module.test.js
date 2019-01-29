@@ -23,5 +23,11 @@ describe('nuxt-ua', () => {
 
     const name = window.document.querySelector('.name');
     expect(name.textContent).toBe('Node.js');
+
+    const isAndroid = window.document.querySelector('.isAndroid');
+    expect(isAndroid.textContent).toBe('false');
+
+    const isWindows = window.document.querySelector('.isWindows');
+    expect(isWindows.textContent).toBe('false');
   });
 })
