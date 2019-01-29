@@ -1,4 +1,4 @@
-# nuxt-ua
+# nuxt-ua [![CircleCI](https://circleci.com/gh/1000ch/nuxt-ua.svg?style=svg)](https://circleci.com/gh/1000ch/nuxt-ua)
 
 UserAgent detector using [Platform.js](https://github.com/bestiejs/platform.js) for Nuxt.
 
