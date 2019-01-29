@@ -19,8 +19,21 @@ interface Platform {
   version: string;
 }
 
+interface NuxtUA {
+  platform: Platform;
+  is: {
+    Chrome(): boolean;
+    Firefox(): boolean;
+    Safari(): boolean;
+    Android(): boolean;
+    iOS(): boolean;
+    macOS(): boolean;
+    Windows(): boolean;
+  };
+}
+
 declare module 'vue/types/vue' {
   export interface Vue {
-    $ua: Platform;
+    $ua: NuxtUA;
   }
 }
