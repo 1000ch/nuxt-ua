@@ -9,10 +9,11 @@
 <script>
 export default {
   asyncData({ $ua }) {
+    console.log($ua);
     return {
       name: $ua.platform.name,
-      isAndroid: $ua.is.Android,
-      isWindows: $ua.is.Windows
+      isAndroid: $ua.is.android,
+      isWindows: $ua.is.windows
     };
   }
 }

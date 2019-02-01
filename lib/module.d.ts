@@ -22,13 +22,13 @@ interface Platform {
 interface NuxtUA {
   platform: Platform;
   is: {
-    Chrome(): boolean;
-    Firefox(): boolean;
-    Safari(): boolean;
-    Android(): boolean;
-    iOS(): boolean;
-    macOS(): boolean;
-    Windows(): boolean;
+    chrome: boolean;
+    firefox: boolean;
+    safari: boolean;
+    android: boolean;
+    ios: boolean;
+    macos: boolean;
+    windows: boolean;
   };
 }
 
