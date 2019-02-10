@@ -1,20 +1,7 @@
 <template>
   <div>
-    <p class="name">{{ name }}</p>
-    <p class="isAndroid">{{ isAndroid }}</p>
-    <p class="isWindows">{{ isWindows }}</p>
+    <p class="name">{{ $ua.platform.name }}</p>
+    <p class="isAndroid">{{ $ua.is.android }}</p>
+    <p class="isWindows">{{ $ua.is.windows }}</p>
   </div>
 </template>
-
-<script>
-export default {
-  asyncData({ $ua }) {
-    console.log($ua);
-    return {
-      name: $ua.platform.name,
-      isAndroid: $ua.is.android,
-      isWindows: $ua.is.windows
-    };
-  }
-}
-</script>
