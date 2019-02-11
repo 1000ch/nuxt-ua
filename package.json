@@ -2,27 +2,27 @@
   "name": "nuxt-ua",
   "version": "0.2.0",
   "description": "UserAgent detector using platform for Nuxt",
-  "main": "lib/module.js",
-  "types": "lib/module.d.ts",
-  "scripts": {
-    "test": "jest"
+  "keywords": [
+    "nuxt"
+  ],
+  "homepage": "https://github.com/1000ch/nuxt-ua#readme",
+  "bugs": {
+    "url": "https://github.com/1000ch/nuxt-ua/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/1000ch/nuxt-ua.git"
   },
-  "keywords": [
-    "nuxt"
-  ],
-  "author": "1000ch",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/1000ch/nuxt-ua/issues"
-  },
-  "homepage": "https://github.com/1000ch/nuxt-ua#readme",
+  "author": "1000ch",
   "files": [
     "lib"
   ],
+  "main": "lib/module.js",
+  "types": "lib/module.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
   "jest": {
     "testEnvironment": "node"
   },
@@ -37,5 +37,9 @@
   "peerDependencies": {
     "nuxt": "^2.0.0",
     "vue": "^2.0.0"
+  },
+  "engine": {
+    "node": "10",
+    "npm": "6"
   }
 }
