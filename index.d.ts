@@ -22,13 +22,13 @@ interface Platform {
 export interface NuxtUserAgent {
   platform: Platform;
   is: {
-    readonly Chrome: boolean;
-    readonly Firefox: boolean;
-    readonly Safari: boolean;
-    readonly Android: boolean;
-    readonly iOS: boolean;
-    readonly macOS: boolean;
-    readonly Windows: boolean;
+    readonly chrome: boolean;
+    readonly firefox: boolean;
+    readonly safari: boolean;
+    readonly android: boolean;
+    readonly ios: boolean;
+    readonly macos: boolean;
+    readonly windows: boolean;
   };
 }
 
