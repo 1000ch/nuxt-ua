@@ -20,7 +20,6 @@ interface Platform {
 }
 
 export interface NuxtUserAgent {
-  platform: Platform;
   is: {
     readonly chrome: boolean;
     readonly firefox: boolean;
