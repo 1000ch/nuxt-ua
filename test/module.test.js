@@ -21,9 +21,6 @@ describe('nuxt-ua', () => {
     const window = await nuxt.renderAndGetWindow(url('/'));
     expect(window.$nuxt.$ua).toBeDefined();
 
-    const name = window.document.querySelector('.name');
-    expect(name.textContent).toBe('Node.js');
-
     const isAndroid = window.document.querySelector('.isAndroid');
     expect(isAndroid.textContent).toBe('false');
 
