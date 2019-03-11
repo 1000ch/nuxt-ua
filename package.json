@@ -16,7 +16,8 @@
   "license": "MIT",
   "author": "1000ch",
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "main": "lib/module.js",
   "types": "index.d.ts",
