@@ -7,6 +7,9 @@ const url = path => `http://localhost:3000${path}`;
 describe('nuxt-ua', () => {
   let nuxt;
 
+  const found = { text: 'true' };
+  const notFound = { text: 'false' };
+
   beforeAll(async () => {
     nuxt = new Nuxt(nuxtConfig);
     await new Builder(nuxt).build();
@@ -23,24 +26,31 @@ describe('nuxt-ua', () => {
     expect(window.$nuxt.$ua).toBeDefined();
   });
 
-  test('nuxt-ua checks correctly', async () => {
-    const { document } = await nuxt.renderAndGetWindow(url('/'));
-    const chrome = document.querySelector('.chrome');
-    const firefox = document.querySelector('.firefox');
-    const safari = document.querySelector('.safari');
-    const android = document.querySelector('.android');
-    const ios = document.querySelector('.ios');
-    const macos = document.querySelector('.macos');
-    const windows = document.querySelector('.windows');
-    const linux = document.querySelector('.linux');
+  test('nuxt-ua checks correctly (1)', async () => {
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0');
+    await page.goto('http://localhost:3000/');
 
-    expect(chrome.textContent).toBe('false');
-    expect(firefox.textContent).toBe('false');
-    expect(safari.textContent).toBe('false');
-    expect(android.textContent).toBe('false');
-    expect(ios.textContent).toBe('false');
-    expect(macos.textContent).toBe('false');
-    expect(windows.textContent).toBe('false');
-    expect(linux.textContent).toBe('false');
+    await expect(page).toMatchElement('.chrome', notFound);
+    await expect(page).toMatchElement('.firefox', found);
+    await expect(page).toMatchElement('.safari', notFound);
+    await expect(page).toMatchElement('.android', notFound);
+    await expect(page).toMatchElement('.ios', notFound);
+    await expect(page).toMatchElement('.windows', notFound);
+    await expect(page).toMatchElement('.macos', found);
+    await expect(page).toMatchElement('.linux', notFound);
+  });
+
+  test('nuxt-ua checks correctly (2)', async () => {
+    await page.setUserAgent('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)');
+    await page.goto('http://localhost:3000/');
+
+    await expect(page).toMatchElement('.chrome', notFound);
+    await expect(page).toMatchElement('.firefox', notFound);
+    await expect(page).toMatchElement('.safari', notFound);
+    await expect(page).toMatchElement('.android', notFound);
+    await expect(page).toMatchElement('.ios', notFound);
+    await expect(page).toMatchElement('.windows', found);
+    await expect(page).toMatchElement('.macos', notFound);
+    await expect(page).toMatchElement('.linux', notFound);
   });
 })
