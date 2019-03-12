@@ -28,6 +28,7 @@ export interface NuxtUserAgent {
     readonly ios: boolean;
     readonly macos: boolean;
     readonly windows: boolean;
+    readonly linux: boolean;
   };
 }
 
