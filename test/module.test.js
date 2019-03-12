@@ -33,6 +33,7 @@ describe('nuxt-ua', () => {
     await expect(page).toMatchElement('.chrome', notFound);
     await expect(page).toMatchElement('.firefox', found);
     await expect(page).toMatchElement('.safari', notFound);
+    await expect(page).toMatchElement('.ie', notFound);
     await expect(page).toMatchElement('.android', notFound);
     await expect(page).toMatchElement('.ios', notFound);
     await expect(page).toMatchElement('.windows', notFound);
@@ -47,6 +48,7 @@ describe('nuxt-ua', () => {
     await expect(page).toMatchElement('.chrome', notFound);
     await expect(page).toMatchElement('.firefox', notFound);
     await expect(page).toMatchElement('.safari', notFound);
+    await expect(page).toMatchElement('.ie', found);
     await expect(page).toMatchElement('.android', notFound);
     await expect(page).toMatchElement('.ios', notFound);
     await expect(page).toMatchElement('.windows', found);
