@@ -17,14 +17,30 @@ describe('nuxt-ua', () => {
     await nuxt.close();
   });
 
-  test('nuxt-ua plugin works', async () => {
+  test('nuxt-ua works as plugin', async () => {
     const window = await nuxt.renderAndGetWindow(url('/'));
+
     expect(window.$nuxt.$ua).toBeDefined();
+  });
 
-    const isAndroid = window.document.querySelector('.isAndroid');
-    expect(isAndroid.textContent).toBe('false');
+  test('nuxt-ua checks correctly', async () => {
+    const { document } = await nuxt.renderAndGetWindow(url('/'));
+    const chrome = document.querySelector('.chrome');
+    const firefox = document.querySelector('.firefox');
+    const safari = document.querySelector('.safari');
+    const android = document.querySelector('.android');
+    const ios = document.querySelector('.ios');
+    const macos = document.querySelector('.macos');
+    const windows = document.querySelector('.windows');
+    const linux = document.querySelector('.linux');
 
-    const isWindows = window.document.querySelector('.isWindows');
-    expect(isWindows.textContent).toBe('false');
+    expect(chrome.textContent).toBe('false');
+    expect(firefox.textContent).toBe('false');
+    expect(safari.textContent).toBe('false');
+    expect(android.textContent).toBe('false');
+    expect(ios.textContent).toBe('false');
+    expect(macos.textContent).toBe('false');
+    expect(windows.textContent).toBe('false');
+    expect(linux.textContent).toBe('false');
   });
 })
