@@ -3,7 +3,11 @@
   "version": "0.7.0",
   "description": "UserAgent detector using platform for Nuxt",
   "keywords": [
-    "nuxt"
+    "nuxt",
+    "platform",
+    "ua",
+    "useragent",
+    "vue"
   ],
   "homepage": "https://github.com/1000ch/nuxt-ua#readme",
   "bugs": {
