@@ -25,6 +25,8 @@ export interface NuxtUserAgent {
     readonly firefox: boolean;
     readonly safari: boolean;
     readonly ie: boolean;
+    readonly edge: boolean;
+    readonly opera: boolean;
     readonly android: boolean;
     readonly ios: boolean;
     readonly macos: boolean;
