@@ -55,4 +55,19 @@ describe('nuxt-ua', () => {
     await expect(page).toMatchElement('.macos', notFound);
     await expect(page).toMatchElement('.linux', notFound);
   });
+
+  test('nuxt-ua checks correctly (3)', async () => {
+    await page.setUserAgent('Mozilla/5.0 (X11; U; Linux i686; fr; rv:1.9.0.10) Gecko/2009042708 Fedora/3.0.10-1.fc10 Firefox/3.0.10');
+    await page.goto('http://localhost:3000/');
+
+    await expect(page).toMatchElement('.chrome', notFound);
+    await expect(page).toMatchElement('.firefox', found);
+    await expect(page).toMatchElement('.safari', notFound);
+    await expect(page).toMatchElement('.ie', notFound);
+    await expect(page).toMatchElement('.android', notFound);
+    await expect(page).toMatchElement('.ios', notFound);
+    await expect(page).toMatchElement('.windows', notFound);
+    await expect(page).toMatchElement('.macos', notFound);
+    await expect(page).toMatchElement('.linux', found);
+  });
 })
