@@ -2,11 +2,27 @@ jest.setTimeout(120000);
 
 const { Nuxt, Builder } = require('nuxt');
 const nuxtConfig = require('./fixture/nuxt.config');
-const url = path => `http://localhost:3000${path}`;
+const android = require('./android.ua');
+const ios = require('./ios.ua');
+const windows = require('./windows.ua');
+const macos = require('./macos.ua');
+const linux = require('./linux.ua');
+const detects = [
+  'chrome',
+  'firefox',
+  'safari',
+  'ie',
+  'edge',
+  'opera',
+  'android',
+  'ios',
+  'windows',
+  'macos',
+  'linux'
+];
 
 describe('nuxt-ua', () => {
   let nuxt;
-
   const found = { text: 'true' };
   const notFound = { text: 'false' };
 
@@ -21,53 +37,83 @@ describe('nuxt-ua', () => {
   });
 
   test('nuxt-ua works as plugin', async () => {
-    const window = await nuxt.renderAndGetWindow(url('/'));
+    const window = await nuxt.renderAndGetWindow('http://localhost:3000/');
 
     expect(window.$nuxt.$ua).toBeDefined();
   });
 
-  test('nuxt-ua checks correctly (1)', async () => {
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:43.0) Gecko/20100101 Firefox/43.0');
-    await page.goto('http://localhost:3000/');
+  test('nuxt-ua detects Android', async () => {
+    for (const useragent of android) {
+      await page.setUserAgent(useragent.ua);
+      await page.goto('http://localhost:3000/');
 
-    await expect(page).toMatchElement('.chrome', notFound);
-    await expect(page).toMatchElement('.firefox', found);
-    await expect(page).toMatchElement('.safari', notFound);
-    await expect(page).toMatchElement('.ie', notFound);
-    await expect(page).toMatchElement('.android', notFound);
-    await expect(page).toMatchElement('.ios', notFound);
-    await expect(page).toMatchElement('.windows', notFound);
-    await expect(page).toMatchElement('.macos', found);
-    await expect(page).toMatchElement('.linux', notFound);
+      for (const detect of detects) {
+        if (useragent.match.includes(detect)) {
+          await expect(page).toMatchElement(`.${detect}`, found);
+        } else {
+          await expect(page).toMatchElement(`.${detect}`, notFound);
+        }
+      }
+    }
   });
 
-  test('nuxt-ua checks correctly (2)', async () => {
-    await page.setUserAgent('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)');
-    await page.goto('http://localhost:3000/');
+  test('nuxt-ua detects iOS', async () => {
+    for (const useragent of ios) {
+      await page.setUserAgent(useragent.ua);
+      await page.goto('http://localhost:3000/');
 
-    await expect(page).toMatchElement('.chrome', notFound);
-    await expect(page).toMatchElement('.firefox', notFound);
-    await expect(page).toMatchElement('.safari', notFound);
-    await expect(page).toMatchElement('.ie', found);
-    await expect(page).toMatchElement('.android', notFound);
-    await expect(page).toMatchElement('.ios', notFound);
-    await expect(page).toMatchElement('.windows', found);
-    await expect(page).toMatchElement('.macos', notFound);
-    await expect(page).toMatchElement('.linux', notFound);
+      for (const detect of detects) {
+        if (useragent.match.includes(detect)) {
+          await expect(page).toMatchElement(`.${detect}`, found);
+        } else {
+          await expect(page).toMatchElement(`.${detect}`, notFound);
+        }
+      }
+    }
   });
 
-  test('nuxt-ua checks correctly (3)', async () => {
-    await page.setUserAgent('Mozilla/5.0 (X11; U; Linux i686; fr; rv:1.9.0.10) Gecko/2009042708 Fedora/3.0.10-1.fc10 Firefox/3.0.10');
-    await page.goto('http://localhost:3000/');
+  test('nuxt-ua detects Windows', async () => {
+    for (const useragent of windows) {
+      await page.setUserAgent(useragent.ua);
+      await page.goto('http://localhost:3000/');
 
-    await expect(page).toMatchElement('.chrome', notFound);
-    await expect(page).toMatchElement('.firefox', found);
-    await expect(page).toMatchElement('.safari', notFound);
-    await expect(page).toMatchElement('.ie', notFound);
-    await expect(page).toMatchElement('.android', notFound);
-    await expect(page).toMatchElement('.ios', notFound);
-    await expect(page).toMatchElement('.windows', notFound);
-    await expect(page).toMatchElement('.macos', notFound);
-    await expect(page).toMatchElement('.linux', found);
+      for (const detect of detects) {
+        if (useragent.match.includes(detect)) {
+          await expect(page).toMatchElement(`.${detect}`, found);
+        } else {
+          await expect(page).toMatchElement(`.${detect}`, notFound);
+        }
+      }
+    }
   });
-})
+
+  test('nuxt-ua detects macOS', async () => {
+    for (const useragent of macos) {
+      await page.setUserAgent(useragent.ua);
+      await page.goto('http://localhost:3000/');
+
+      for (const detect of detects) {
+        if (useragent.match.includes(detect)) {
+          await expect(page).toMatchElement(`.${detect}`, found);
+        } else {
+          await expect(page).toMatchElement(`.${detect}`, notFound);
+        }
+      }
+    }
+  });
+
+  test('nuxt-ua detects Linux', async () => {
+    for (const useragent of linux) {
+      await page.setUserAgent(useragent.ua);
+      await page.goto('http://localhost:3000/');
+
+      for (const detect of detects) {
+        if (useragent.match.includes(detect)) {
+          await expect(page).toMatchElement(`.${detect}`, found);
+        } else {
+          await expect(page).toMatchElement(`.${detect}`, notFound);
+        }
+      }
+    }
+  });
+});

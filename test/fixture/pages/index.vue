@@ -4,6 +4,8 @@
     <p class="firefox">{{ $ua.is.firefox }}</p>
     <p class="safari">{{ $ua.is.safari }}</p>
     <p class="ie">{{ $ua.is.ie }}</p>
+    <p class="edge">{{ $ua.is.edge }}</p>
+    <p class="opera">{{ $ua.is.opera }}</p>
     <p class="android">{{ $ua.is.android }}</p>
     <p class="ios">{{ $ua.is.ios }}</p>
     <p class="macos">{{ $ua.is.macos }}</p>
