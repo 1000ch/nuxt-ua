@@ -41,6 +41,52 @@ export default Vue.extend({
 </script>
 ```
 
+## API
+
+### `$ua.is.chrome`
+
+Returns UserAgent is Chrome or not.
+
+### `$ua.is.firefox`
+
+Returns UserAgent is Firefox or not.
+
+### `$ua.is.safari`
+
+Returns UserAgent is Safari or not.
+
+### `$ua.is.ie`
+
+Returns UserAgent is Internet Explorer or not.
+
+### `$ua.is.edge`
+
+Returns UserAgent is Microsoft Edge or not.
+
+### `$ua.is.opera`
+
+Returns UserAgent is Opera or not.
+
+### `$ua.is.android`
+
+Returns UserAgent is Android or not.
+
+### `$ua.is.ios`
+
+Returns UserAgent is iOS or not.
+
+### `$ua.is.macos`
+
+Returns UserAgent is macOS or not.
+
+### `$ua.is.windows`
+
+Returns UserAgent is Windows or not.
+
+### `$ua.is.linux`
+
+Returns UserAgent is Linux or not.
+
 ## License
 
 [MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
