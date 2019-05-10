@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p class="value">{{ $ua.value }}</p>
     <p class="chrome">{{ $ua.is.chrome }}</p>
     <p class="firefox">{{ $ua.is.firefox }}</p>
     <p class="safari">{{ $ua.is.safari }}</p>

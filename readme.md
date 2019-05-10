@@ -43,6 +43,10 @@ export default Vue.extend({
 
 ## API
 
+### `$ua.value`
+
+Returns UserAgent string.
+
 ### `$ua.is.chrome`
 
 Returns UserAgent is Chrome or not.
