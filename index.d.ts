@@ -37,3 +37,5 @@ declare namespace NuxtUserAgent {
     };
   }
 }
+
+export default NuxtUserAgent;
