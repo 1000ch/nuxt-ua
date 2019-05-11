@@ -46,7 +46,7 @@ describe('nuxt-ua', () => {
     for (const useragent of android) {
       await page.setUserAgent(useragent.ua);
       await page.goto('http://localhost:3000/');
-      await expect(page).toMatchElement(`.value`, useragent.ua);
+      await expect(page).toMatchElement(`.platform`, useragent.ua);
 
       for (const detect of detects) {
         if (useragent.match.includes(detect)) {
@@ -62,7 +62,7 @@ describe('nuxt-ua', () => {
     for (const useragent of ios) {
       await page.setUserAgent(useragent.ua);
       await page.goto('http://localhost:3000/');
-      await expect(page).toMatchElement(`.value`, useragent.ua);
+      await expect(page).toMatchElement(`.platform`, useragent.ua);
 
       for (const detect of detects) {
         if (useragent.match.includes(detect)) {
@@ -78,7 +78,7 @@ describe('nuxt-ua', () => {
     for (const useragent of windows) {
       await page.setUserAgent(useragent.ua);
       await page.goto('http://localhost:3000/');
-      await expect(page).toMatchElement(`.value`, useragent.ua);
+      await expect(page).toMatchElement(`.platform`, useragent.ua);
 
       for (const detect of detects) {
         if (useragent.match.includes(detect)) {
@@ -94,7 +94,7 @@ describe('nuxt-ua', () => {
     for (const useragent of macos) {
       await page.setUserAgent(useragent.ua);
       await page.goto('http://localhost:3000/');
-      await expect(page).toMatchElement(`.value`, useragent.ua);
+      await expect(page).toMatchElement(`.platform`, useragent.ua);
 
       for (const detect of detects) {
         if (useragent.match.includes(detect)) {
@@ -110,7 +110,7 @@ describe('nuxt-ua', () => {
     for (const useragent of linux) {
       await page.setUserAgent(useragent.ua);
       await page.goto('http://localhost:3000/');
-      await expect(page).toMatchElement(`.value`, useragent.ua);
+      await expect(page).toMatchElement(`.platform`, useragent.ua);
 
       for (const detect of detects) {
         if (useragent.match.includes(detect)) {

@@ -43,9 +43,9 @@ export default Vue.extend({
 
 ## API
 
-### `$ua.value`
+### `$ua.platform`
 
-Returns UserAgent string.
+Returns [`Platform`](https://github.com/1000ch/nuxt-ua/blob/master/index.d.ts) object.
 
 ### `$ua.is.chrome`
 
