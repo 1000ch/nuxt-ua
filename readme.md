@@ -20,7 +20,26 @@ module.exports = {
 }
 ```
 
-`nuxt-ua` instance will be injected to [`Context`](https://nuxtjs.org/api/context/) as `$ua`. `$ua` have [`NuxtUserAgent`](https://github.com/1000ch/nuxt-ua/blob/master/index.d.ts) interface.
+Configure also `.d.ts` like following, because `nuxt-ua` instance will be injected to [`Context`](https://nuxtjs.org/api/context/) as `$ua`.
+
+```ts
+import NuxtUserAgent from 'nuxt-ua';
+import { Store } from 'vuex';
+
+declare module 'vuex/types/index' {
+  interface Store<S> {
+    $ua: NuxtUserAgent.UserAgent;
+  }
+}
+
+declare module 'vue/types/vue' {
+  export interface Vue {
+    $ua: NuxtUserAgent.UserAgent;
+  }
+}
+```
+
+Then, you can use `$ua` object.
 
 ```html
 <template>
