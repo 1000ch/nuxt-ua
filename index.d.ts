@@ -22,7 +22,7 @@ declare namespace NuxtUserAgent {
 
   interface UserAgent {
     readonly platform: Platform;
-    is: {
+    readonly is: {
       readonly chrome: boolean;
       readonly firefox: boolean;
       readonly safari: boolean;
