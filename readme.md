@@ -5,7 +5,7 @@ UserAgent detector using [Platform.js](https://github.com/bestiejs/platform.js) 
 ## Install
 
 ```bash
-$ npm install --save nuxt-ua
+npm install --save nuxt-ua
 ```
 
 ## Usage
@@ -28,13 +28,13 @@ import { Store } from 'vuex';
 
 declare module 'vuex/types/index' {
   interface Store<S> {
-    $ua: NuxtUserAgent.UserAgent;
+    $ua: NuxtUserAgent;
   }
 }
 
 declare module 'vue/types/vue' {
   export interface Vue {
-    $ua: NuxtUserAgent.UserAgent;
+    $ua: NuxtUserAgent;
   }
 }
 ```
@@ -64,7 +64,7 @@ export default Vue.extend({
 
 ### `$ua.platform`
 
-Returns [`Platform`](https://github.com/1000ch/nuxt-ua/blob/master/index.d.ts) object.
+Returns [`Platform`](https://www.npmjs.com/package/@types/platform) object.
 
 ### `$ua.is.chrome`
 
