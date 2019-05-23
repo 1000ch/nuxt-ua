@@ -2,11 +2,11 @@ jest.setTimeout(120000);
 
 const { Nuxt, Builder } = require('nuxt');
 const nuxtConfig = require('./fixture/nuxt.config');
-const android = require('./android.ua');
-const ios = require('./ios.ua');
-const windows = require('./windows.ua');
-const macos = require('./macos.ua');
-const linux = require('./linux.ua');
+const android = require('./ua/android');
+const ios = require('./ua/ios');
+const windows = require('./ua/windows');
+const macos = require('./ua/macos');
+const linux = require('./ua/linux');
 const detects = [
   'chrome',
   'firefox',
