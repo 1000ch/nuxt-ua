@@ -39,7 +39,7 @@
     "acorn": "^6.0.0",
     "jest": "^24.0.0",
     "jest-puppeteer": "^4.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.7.1",
     "puppeteer": "^1.13.0"
   },
   "peerDependencies": {
