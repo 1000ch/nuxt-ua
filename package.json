@@ -1,6 +1,6 @@
 {
   "name": "nuxt-ua",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UserAgent detector using platform for Nuxt",
   "keywords": [
     "nuxt",
