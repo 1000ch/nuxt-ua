@@ -4,9 +4,9 @@
 
 
 [![CircleCI](https://circleci.com/gh/1000ch/nuxt-ua.svg?style=svg)](https://circleci.com/gh/1000ch/nuxt-ua)
-[![NPM version](https://badge.fury.io/js/vue-grd.svg)](http://badge.fury.io/js/nuxt-ua)
-[![Dependency Status](https://david-dm.org/1000ch/vue-grd.svg)](https://david-dm.org/1000ch/nuxt-ua)
-[![devDependency Status](https://david-dm.org/1000ch/vue-grd/dev-status.svg)](https://david-dm.org/1000ch/nuxt-ua?type=dev)
+[![NPM version](https://badge.fury.io/js/nuxt-ua.svg)](http://badge.fury.io/js/nuxt-ua)
+[![Dependency Status](https://david-dm.org/1000ch/nuxt-ua.svg)](https://david-dm.org/1000ch/nuxt-ua)
+[![devDependency Status](https://david-dm.org/1000ch/nuxt-ua/dev-status.svg)](https://david-dm.org/1000ch/nuxt-ua?type=dev)
 
 ## Install
 
