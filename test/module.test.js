@@ -1,6 +1,6 @@
 jest.setTimeout(120000);
 
-const { Nuxt, Builder } = require('nuxt');
+const { Nuxt, Builder, Generator } = require('nuxt');
 const nuxtConfig = require('./fixture/nuxt.config');
 const android = require('./ua/android');
 const ios = require('./ua/ios');
@@ -40,6 +40,33 @@ describe('nuxt-ua', () => {
     const window = await nuxt.renderAndGetWindow('http://localhost:3000/');
 
     expect(window.$nuxt.$ua).toBeDefined();
+  });
+
+  test('nuxt-ua works as plugin with spa mode', async () => {
+    const nuxtWithSpa = new Nuxt({
+      ...nuxtConfig,
+      mode: 'spa',
+    });
+    await new Builder(nuxtWithSpa).build();
+    await nuxtWithSpa.listen(3001);
+
+    const window = await nuxtWithSpa.renderAndGetWindow('http://localhost:3001/');
+    expect(window.$nuxt.$ua).toBeDefined();
+
+    await nuxtWithSpa.close();
+  });
+
+  test('nuxt-ua works as plugin with nuxt generete', async () => {
+    const nuxtWithGenerate = new Nuxt(nuxtConfig);
+    const builder = new Builder(nuxtWithGenerate);
+    const generator = new Generator(nuxtWithGenerate, builder);
+    await generator.generate();
+    await nuxtWithGenerate.listen(3002);
+
+    const window = await nuxtWithGenerate.renderAndGetWindow('http://localhost:3002/');
+    expect(window.$nuxt.$ua).toBeDefined();
+
+    await nuxtWithGenerate.close();
   });
 
   test('nuxt-ua detects Android', async () => {
