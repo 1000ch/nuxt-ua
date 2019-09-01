@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "acorn": "^7.0.0",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "jest-puppeteer": "^4.3.0",
-    "nuxt": "^2.8.1",
+    "nuxt": "^2.9.2",
     "puppeteer": "^1.19.0"
   },
   "peerDependencies": {
