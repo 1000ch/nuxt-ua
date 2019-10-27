@@ -39,7 +39,7 @@
     "jest": "^24.9.0",
     "jest-puppeteer": "^4.3.0",
     "nuxt": "^2.10.1",
-    "puppeteer": "^1.20.0"
+    "puppeteer": "^2.0.0"
   },
   "peerDependencies": {
     "nuxt": "^2.0.0",
