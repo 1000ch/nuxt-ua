@@ -38,8 +38,8 @@
   "devDependencies": {
     "jest": "^26.4.2",
     "jest-puppeteer": "^4.4.0",
-    "nuxt": "^2.14.3",
-    "puppeteer": "^7.0.1"
+    "nuxt": "^2.15.0",
+    "puppeteer": "^7.1.0"
   },
   "peerDependencies": {
     "nuxt": "^2.0.0",
