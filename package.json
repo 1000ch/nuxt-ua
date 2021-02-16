@@ -44,9 +44,5 @@
   "peerDependencies": {
     "nuxt": "^2.0.0",
     "vue": "^2.0.0"
-  },
-  "engine": {
-    "node": "10",
-    "npm": "6"
   }
 }

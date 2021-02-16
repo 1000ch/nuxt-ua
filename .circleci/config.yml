@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: node:10.15.0
+      - image: node:14.15.5
 
     steps:
       - run:
