@@ -2,8 +2,7 @@
 
 > UserAgent detector using [Platform.js](https://github.com/bestiejs/platform.js) for Nuxt.
 
-
-[![CircleCI](https://circleci.com/gh/1000ch/nuxt-ua.svg?style=svg)](https://circleci.com/gh/1000ch/nuxt-ua)
+![GitHub Actions Status](https://github.com/1000ch/nuxt-ua/workflows/test/badge.svg)
 [![NPM version](https://badge.fury.io/js/nuxt-ua.svg)](http://badge.fury.io/js/nuxt-ua)
 [![Dependency Status](https://david-dm.org/1000ch/nuxt-ua.svg)](https://david-dm.org/1000ch/nuxt-ua)
 [![devDependency Status](https://david-dm.org/1000ch/nuxt-ua/dev-status.svg)](https://david-dm.org/1000ch/nuxt-ua?type=dev)
