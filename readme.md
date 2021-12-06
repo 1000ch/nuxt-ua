@@ -1,11 +1,6 @@
-# nuxt-ua
+# nuxt-ua ![GitHub Actions Status](https://github.com/1000ch/nuxt-ua/workflows/test/badge.svg?branch=main)
 
 > UserAgent detector using [Platform.js](https://github.com/bestiejs/platform.js) for Nuxt.
-
-![GitHub Actions Status](https://github.com/1000ch/nuxt-ua/workflows/test/badge.svg)
-[![NPM version](https://badge.fury.io/js/nuxt-ua.svg)](http://badge.fury.io/js/nuxt-ua)
-[![Dependency Status](https://david-dm.org/1000ch/nuxt-ua.svg)](https://david-dm.org/1000ch/nuxt-ua)
-[![devDependency Status](https://david-dm.org/1000ch/nuxt-ua/dev-status.svg)](https://david-dm.org/1000ch/nuxt-ua?type=dev)
 
 ## Install
 
