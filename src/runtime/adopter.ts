@@ -1,11 +1,14 @@
 import platform from 'platform';
+export type Platform = typeof platform
 
-class PlatformAdopter {
-  constructor(platform) {
+export class PlatformAdopter {
+  platform: Platform;
+
+  constructor (platform: Platform) {
     this.platform = platform;
   }
 
-  get chrome() {
+  get chrome () {
     const { name } = this.platform;
 
     if (name) {
@@ -15,7 +18,7 @@ class PlatformAdopter {
     }
   }
 
-  get firefox() {
+  get firefox () {
     const { name } = this.platform;
 
     if (name) {
@@ -25,7 +28,7 @@ class PlatformAdopter {
     }
   }
 
-  get safari() {
+  get safari () {
     const { name } = this.platform;
 
     if (name) {
@@ -35,7 +38,7 @@ class PlatformAdopter {
     }
   }
 
-  get ie() {
+  get ie () {
     const { name } = this.platform;
 
     if (name) {
@@ -45,7 +48,7 @@ class PlatformAdopter {
     }
   }
 
-  get edge() {
+  get edge () {
     const { name } = this.platform;
 
     if (name) {
@@ -55,7 +58,7 @@ class PlatformAdopter {
     }
   }
 
-  get opera() {
+  get opera () {
     const { name } = this.platform;
 
     if (name) {
@@ -65,8 +68,8 @@ class PlatformAdopter {
     }
   }
 
-  get android() {
-    const { family } = this.platform.os;
+  get android () {
+    const family = this.platform.os?.family;
 
     if (family) {
       return family.match(/Android/) !== null;
@@ -75,8 +78,8 @@ class PlatformAdopter {
     }
   }
 
-  get ios() {
-    const { family } = this.platform.os;
+  get ios () {
+    const family = this.platform.os?.family;
 
     if (family) {
       return family.match(/iOS/) !== null;
@@ -85,8 +88,8 @@ class PlatformAdopter {
     }
   }
 
-  get macos() {
-    const { family } = this.platform.os;
+  get macos () {
+    const family = this.platform.os?.family;
 
     if (family) {
       return family.match(/OS X|Darwin/) !== null;
@@ -95,8 +98,8 @@ class PlatformAdopter {
     }
   }
 
-  get windows() {
-    const { family } = this.platform.os;
+  get windows () {
+    const family = this.platform.os?.family;
 
     if (family) {
       return family.match(/Windows/) !== null;
@@ -105,8 +108,8 @@ class PlatformAdopter {
     }
   }
 
-  get linux() {
-    const { family } = this.platform.os;
+  get linux () {
+    const family = this.platform.os?.family;
 
     if (family) {
       return family.match(/Ubuntu|Debian|Fedora|Red Hat|SuSE|Gentoo|i686/) !== null;
@@ -114,38 +117,4 @@ class PlatformAdopter {
       return false;
     }
   }
-}
-
-class NuxtUserAgent {
-  constructor(platform) {
-    this.adopter = new PlatformAdopter(platform);
-  }
-
-  get platform() {
-    return this.adopter.platform;
-  }
-
-  get is() {
-    return this.adopter;
-  }
-}
-
-function createNuxtUserAgent(context) {
-  const isBrowser = typeof window !== 'undefined';
-  const isGenerate = process.static && process.server;
-  let userAgent = '';
-
-  if (isBrowser) {
-    userAgent = navigator.userAgent;
-  } else if (!isGenerate) {
-    userAgent = context.req.headers['user-agent'];
-  }
-
-  return new NuxtUserAgent(platform.parse(userAgent));
-}
-
-export default (context, inject) => {
-  const ua = createNuxtUserAgent(context);
-  context.$ua = ua;
-  inject('ua', ua);
 }

@@ -1,0 +1,13 @@
+{
+  "eslint.validate": ["javascript", "vue", "typescript"],
+  "[js]": {
+    "editor.formatOnSave": false
+  },
+  "[ts]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+}

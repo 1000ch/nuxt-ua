@@ -1,7 +1,8 @@
 {
   "name": "nuxt-ua",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "UserAgent detector using platform for Nuxt",
+  "type": "module",
   "keywords": [
     "nuxt",
     "platform",
@@ -20,30 +21,39 @@
   "license": "MIT",
   "author": "1000ch",
   "files": [
-    "lib",
-    "index.d.ts"
+    "dist"
   ],
-  "main": "lib/module.js",
-  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "jest": {
     "preset": "jest-puppeteer"
   },
   "dependencies": {
+    "@nuxt/kit": "^3.0.0",
     "@types/platform": "^1.3.4",
     "platform": "^1.3.6"
   },
   "devDependencies": {
+    "@nuxt/module-builder": "0.2.1",
+    "@nuxt/schema": "3.0.0",
+    "@nuxtjs/eslint-config-typescript": "12.0.0",
+    "eslint": "8.30.0",
     "jest": "^27.5.1",
     "jest-puppeteer": "^6.1.0",
-    "nuxt": "^2.13.3",
-    "puppeteer": "^13.5.1",
-    "vue": "^2.6.14"
-  },
-  "peerDependencies": {
-    "nuxt": "^2.0.0",
-    "vue": "^2.0.0"
+    "nuxt": "3.0.0",
+    "puppeteer": "^13.5.1"
   }
 }

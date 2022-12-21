@@ -110,6 +110,33 @@ Returns UserAgent is Windows or not.
 
 Returns UserAgent is Linux or not.
 
+## Development
+
+1. Install the development dependencies
+
+```
+npm ci
+```
+
+2. Initialize the Nuxt playground
+
+```
+npm run dev:prepare
+```
+
+3. Run the development environment
+
+```
+npm run dev
+```
+
+
+4. Add or modify the tests and ensure that tests are passing
+
+```
+npm test
+```
+
 ## License
 
 [MIT](https://1000ch.mit-license.org) © [Shogo Sensui](https://github.com/1000ch)
