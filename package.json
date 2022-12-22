@@ -33,14 +33,11 @@
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "vitest",
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
-  },
-  "jest": {
-    "preset": "jest-puppeteer"
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0",
@@ -50,11 +47,10 @@
   "devDependencies": {
     "@nuxt/module-builder": "0.2.1",
     "@nuxt/schema": "3.0.0",
+    "@nuxt/test-utils": "3.0.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "eslint": "8.30.0",
-    "jest": "^27.5.1",
-    "jest-puppeteer": "^6.1.0",
     "nuxt": "3.0.0",
-    "puppeteer": "^13.5.1"
+    "vitest": "0.26.2"
   }
 }
