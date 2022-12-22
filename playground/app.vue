@@ -53,6 +53,7 @@ import { useNuxtApp } from '#app';
 
 const nuxtApp = useNuxtApp();
 onMounted(() => {
+  // eslint-disable-next-line no-console
   console.log(nuxtApp.$ua.platform);
 });
 </script>
