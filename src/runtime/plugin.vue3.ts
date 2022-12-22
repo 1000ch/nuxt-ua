@@ -1,8 +1,6 @@
 import { defineNuxtPlugin, useRequestHeaders } from '#app';
 import { NuxtUserAgent } from './nuxt-ua';
 
-import './types';
-
 export default defineNuxtPlugin(() => {
   let userAgent = '';
 

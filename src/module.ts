@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'url';
-import { defineNuxtModule, addPlugin, createResolver, isNuxt2 } from '@nuxt/kit';
+import { defineNuxtModule, addPlugin, createResolver, isNuxt2, extendWebpackConfig } from '@nuxt/kit';
 import { name, version } from '../package.json';
 
 export default defineNuxtModule({
@@ -17,6 +17,13 @@ export default defineNuxtModule({
 
     if (isNuxt2()) {
       addPlugin(resolve(runtimeDir, 'plugin.vue2'));
+      extendWebpackConfig((config) => {
+        config.module.rules.push({
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: 'javascript/auto'
+        });
+      });
     } else {
       addPlugin(resolve(runtimeDir, 'plugin.vue3'));
     }

@@ -1,5 +1,4 @@
 import { NuxtUserAgent } from './nuxt-ua';
-import './types';
 
 function createNuxtUserAgent (context: any) {
   const isBrowser = typeof window !== 'undefined';

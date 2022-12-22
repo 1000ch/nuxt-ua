@@ -10,36 +10,32 @@ npm install --save nuxt-ua
 
 ## Usage
 
-Configure `nuxt.config.js`.
+Add `'nuxt-ua'` to your `modules` array in the `nuxt.config.ts` file:
 
 ```js
-module.exports = {
-  modules: [
-    'nuxt-ua'
-  ]
-}
+modules: [
+  // other modules...
+  'nuxt-ua',
+]
 ```
 
-Configure also `.d.ts` like following, because `nuxt-ua` instance will be injected to [`Context`](https://nuxtjs.org/api/context/) as `$ua`.
+### Nuxt 2 types
 
-```ts
-import NuxtUserAgent from 'nuxt-ua';
-import { Store } from 'vuex';
+If you are using TypeScript in a Nuxt2 project, please add `nuxt-ua/types` to your `tsconfig.json` file to inject `$ua` into the [`Context`](https://nuxtjs.org/api/context/):
 
-declare module 'vuex/types/index' {
-  interface Store<S> {
-    $ua: NuxtUserAgent;
+```jsonc
+{
+  "compilerOptions": {
+    // ..
+    "types": [
+      "@nuxt/types",
+      "@types/node",
+      "nuxt-ua/types"
+    ]
   }
 }
 
-declare module 'vue/types/vue' {
-  export interface Vue {
-    $ua: NuxtUserAgent;
-  }
-}
-```
-
-Then, you can use `$ua` object.
+Then, you can use the `$ua` object:
 
 ```html
 <template>

@@ -69,7 +69,7 @@ export class PlatformAdopter {
   }
 
   get android () {
-    const family = this.platform.os?.family;
+    const { family } = this.platform.os || {};
 
     if (family) {
       return family.match(/Android/) !== null;
@@ -79,7 +79,7 @@ export class PlatformAdopter {
   }
 
   get ios () {
-    const family = this.platform.os?.family;
+    const { family } = this.platform.os || {};
 
     if (family) {
       return family.match(/iOS/) !== null;
@@ -89,7 +89,7 @@ export class PlatformAdopter {
   }
 
   get macos () {
-    const family = this.platform.os?.family;
+    const { family } = this.platform.os || {};
 
     if (family) {
       return family.match(/OS X|Darwin/) !== null;
@@ -99,7 +99,7 @@ export class PlatformAdopter {
   }
 
   get windows () {
-    const family = this.platform.os?.family;
+    const { family } = this.platform.os || {};
 
     if (family) {
       return family.match(/Windows/) !== null;
@@ -109,7 +109,7 @@ export class PlatformAdopter {
   }
 
   get linux () {
-    const family = this.platform.os?.family;
+    const { family } = this.platform.os || {};
 
     if (family) {
       return family.match(/Ubuntu|Debian|Fedora|Red Hat|SuSE|Gentoo|i686/) !== null;

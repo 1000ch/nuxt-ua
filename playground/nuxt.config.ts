@@ -4,10 +4,5 @@ import NuxtUaModule from '..';
 export default defineNuxtConfig({
   modules: [
     NuxtUaModule
-  ],
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  }
+  ]
 });

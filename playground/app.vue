@@ -7,5 +7,12 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+import { useNuxtApp } from '#app';
+
+const nuxtApp = useNuxtApp();
+onMounted(() => {
+  console.log(nuxtApp.$ua.platform);
+});
 </script>
