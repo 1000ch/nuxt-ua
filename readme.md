@@ -10,6 +10,8 @@ npm install --save nuxt-ua
 
 ## Usage
 
+This module is compatible with Nuxt 2, Nuxt 3 and Nuxt-bridge.
+
 Add `'nuxt-ua'` to your `modules` array in the `nuxt.config.ts` file:
 
 ```js
@@ -60,51 +62,51 @@ export default Vue.extend({
 
 ### `$ua.platform`
 
-Returns [`Platform`](https://www.npmjs.com/package/@types/platform) object.
+Returns a [`Platform`](https://www.npmjs.com/package/@types/platform) object.
 
 ### `$ua.is.chrome`
 
-Returns UserAgent is Chrome or not.
+Returns `true` if the UserAgent is Chrome.
 
 ### `$ua.is.firefox`
 
-Returns UserAgent is Firefox or not.
+Returns `true` if the UserAgent is Firefox.
 
 ### `$ua.is.safari`
 
-Returns UserAgent is Safari or not.
+Returns `true` if the UserAgent is Safari.
 
 ### `$ua.is.ie`
 
-Returns UserAgent is Internet Explorer or not.
+Returns `true` if the UserAgent is Internet Explorer.
 
 ### `$ua.is.edge`
 
-Returns UserAgent is Microsoft Edge or not.
+Returns `true` if the UserAgent is Microsoft Edge.
 
 ### `$ua.is.opera`
 
-Returns UserAgent is Opera or not.
+Returns `true` if the UserAgent is Opera.
 
 ### `$ua.is.android`
 
-Returns UserAgent is Android or not.
+Returns `true` if the UserAgent is Android.
 
 ### `$ua.is.ios`
 
-Returns UserAgent is iOS or not.
+Returns `true` if the UserAgent is iOS.
 
 ### `$ua.is.macos`
 
-Returns UserAgent is macOS or not.
+Returns `true` if the UserAgent is macOS.
 
 ### `$ua.is.windows`
 
-Returns UserAgent is Windows or not.
+Returns `true` if the UserAgent is Windows.
 
 ### `$ua.is.linux`
 
-Returns UserAgent is Linux or not.
+Returns `true` if the UserAgent is Linux.
 
 ## Development
 
