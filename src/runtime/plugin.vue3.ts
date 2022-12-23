@@ -9,10 +9,10 @@ export default defineNuxtPlugin(() => {
   } else {
     userAgent = useRequestHeaders(['user-agent'])['user-agent'] ?? '';
   }
-  const ua = new NuxtUserAgent(userAgent);
+
   return {
     provide: {
-      ua
+      ua: new NuxtUserAgent(userAgent)
     }
   };
 });
