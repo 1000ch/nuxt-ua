@@ -12,7 +12,7 @@ describe('config file', async () => {
     fixture
   });
 
-  test.each(auMatch)('match $match', async ({ ua, match }) => {
+  test.each(uaMatch)('match $match', async ({ ua, match }) => {
     const body = await $fetch('/', { headers: { 'User-Agent': ua } });
     for (const matchData of match) {
       expect(body).toMatch(`<li data-expect="${matchData}" data-match="true">`);
