@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import { describe, test, expect } from 'vitest';
 import { setup, $fetch } from '@nuxt/test-utils';
-import auMatch from './ua';
+import uaMatch from './ua';
 
 const fixture = fileURLToPath(new URL('../playground', import.meta.url));
 
