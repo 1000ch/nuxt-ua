@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     ua: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9.1) AppleWebKit/537.9 (KHTML like Gecko) Chrome/23.0.1257.0 Safari/537.9',
     match: ['chrome', 'macos']

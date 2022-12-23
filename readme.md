@@ -10,36 +10,34 @@ npm install --save nuxt-ua
 
 ## Usage
 
-Configure `nuxt.config.js`.
+This module is compatible with Nuxt 2, Nuxt 3 and Nuxt-bridge.
+
+Add `'nuxt-ua'` to your `modules` array in the `nuxt.config.ts` file:
 
 ```js
-module.exports = {
-  modules: [
-    'nuxt-ua'
-  ]
-}
+modules: [
+  // other modules...
+  'nuxt-ua',
+]
 ```
 
-Configure also `.d.ts` like following, because `nuxt-ua` instance will be injected to [`Context`](https://nuxtjs.org/api/context/) as `$ua`.
+### Nuxt 2 types
 
-```ts
-import NuxtUserAgent from 'nuxt-ua';
-import { Store } from 'vuex';
+If you are using TypeScript in a Nuxt2 project, please add `nuxt-ua/types` to your `tsconfig.json` file to inject `$ua` into the [`Context`](https://nuxtjs.org/api/context/):
 
-declare module 'vuex/types/index' {
-  interface Store<S> {
-    $ua: NuxtUserAgent;
+```jsonc
+{
+  "compilerOptions": {
+    // ..
+    "types": [
+      "@nuxt/types",
+      "@types/node",
+      "nuxt-ua/types"
+    ]
   }
 }
 
-declare module 'vue/types/vue' {
-  export interface Vue {
-    $ua: NuxtUserAgent;
-  }
-}
-```
-
-Then, you can use `$ua` object.
+Then, you can use the `$ua` object:
 
 ```html
 <template>
@@ -64,51 +62,78 @@ export default Vue.extend({
 
 ### `$ua.platform`
 
-Returns [`Platform`](https://www.npmjs.com/package/@types/platform) object.
+Returns a [`Platform`](https://www.npmjs.com/package/@types/platform) object.
 
 ### `$ua.is.chrome`
 
-Returns UserAgent is Chrome or not.
+Returns `true` if the UserAgent is Chrome.
 
 ### `$ua.is.firefox`
 
-Returns UserAgent is Firefox or not.
+Returns `true` if the UserAgent is Firefox.
 
 ### `$ua.is.safari`
 
-Returns UserAgent is Safari or not.
+Returns `true` if the UserAgent is Safari.
 
 ### `$ua.is.ie`
 
-Returns UserAgent is Internet Explorer or not.
+Returns `true` if the UserAgent is Internet Explorer.
 
 ### `$ua.is.edge`
 
-Returns UserAgent is Microsoft Edge or not.
+Returns `true` if the UserAgent is Microsoft Edge.
 
 ### `$ua.is.opera`
 
-Returns UserAgent is Opera or not.
+Returns `true` if the UserAgent is Opera.
 
 ### `$ua.is.android`
 
-Returns UserAgent is Android or not.
+Returns `true` if the UserAgent is Android.
 
 ### `$ua.is.ios`
 
-Returns UserAgent is iOS or not.
+Returns `true` if the UserAgent is iOS.
 
 ### `$ua.is.macos`
 
-Returns UserAgent is macOS or not.
+Returns `true` if the UserAgent is macOS.
 
 ### `$ua.is.windows`
 
-Returns UserAgent is Windows or not.
+Returns `true` if the UserAgent is Windows.
 
 ### `$ua.is.linux`
 
-Returns UserAgent is Linux or not.
+Returns `true` if the UserAgent is Linux.
+
+## Development
+
+1. Install the development dependencies
+
+```
+npm ci
+```
+
+2. Initialize the Nuxt playground
+
+```
+npm run dev:prepare
+```
+
+3. Run the development environment
+
+```
+npm run dev
+```
+
+
+4. Add or modify the tests and ensure that tests are passing
+
+```
+npm test
+```
 
 ## License
 

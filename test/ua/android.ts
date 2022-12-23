@@ -1,4 +1,4 @@
-  module.exports = [
+export default [
   {
     ua: 'Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; Sprint APA9292KT Build/ERE27) AppleWebKit/530.17 (KHTML, like Gecko)',
     match: ['android']
