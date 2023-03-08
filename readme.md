@@ -36,6 +36,7 @@ If you are using TypeScript in a Nuxt2 project, please add `nuxt-ua/types` to yo
     ]
   }
 }
+```
 
 Then, you can use the `$ua` object:
 
