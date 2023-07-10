@@ -52,6 +52,6 @@
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "eslint": "8.42.0",
     "nuxt": "3.5.3",
-    "vitest": "0.31.0"
+    "vitest": "0.33.0"
   }
 }
